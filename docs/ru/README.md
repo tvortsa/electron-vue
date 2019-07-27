@@ -1,6 +1,6 @@
 ![](../images/logo.png)
 
-> The boilerplate for making electron applications built with vue \(pretty much what it sounds like\).
+> Шаблон для создания приложений electron, с помощью VUE \(в значительной степени, как это звучит\).
 
 [![Build Status](https://semaphoreci.com/api/v1/simulatedgreg/electron-vue/branches/master/badge.svg)](https://semaphoreci.com/simulatedgreg/electron-vue)
 
@@ -8,23 +8,23 @@
 
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/uses-js.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/makes-people-smile.svg)](http://forthebadge.com)
 
-## Overview
+## Обзор
 
-The aim of this project is to remove the need of manually setting up electron apps using vue. electron-vue takes advantage of `vue-cli` for scaffolding, `webpack` with `vue-loader`, `electron-packager` or `electron-builder`, some of the most used plugins like `vue-router`, `vuex`, and so much more.
+Целью этого проекта является устранение необходимости ручной настройки приложений electron с использованием vue. electron-vue использует преимущества `vue-cli` для скафолдинга, `webpack` с `vue-loader`, `electron-packager` или `electron-builder`, некоторыми из наиболее используемых плагинов, таких как `vue-router`, `vuex`, и др.
 
-#### Check out the documentation [here](https://simulatedgreg.gitbooks.io/electron-vue/content/index.html).
+#### Смотрите документацию [здесь](https://simulatedgreg.gitbooks.io/electron-vue/content/index.html).
 
-Things you'll find in this boilerplate...
+Что вы найдете в этом шаблоне...
 
-* Basic project structure with a **single** `package.json` setup
-* Detailed [documentation](https://simulatedgreg.gitbooks.io/electron-vue/content/)
-* Project scaffolding using [vue-cli](https://github.com/vuejs/vue-cli)
-* Ready to use Vue plugins \([axios](https://github.com/mzabriskie/axios), [vue-electron](https://github.com/SimulatedGREG/vue-electron), [vue-router](https://github.com/vuejs/vue-router), [vuex](https://github.com/vuejs/vuex)\)\*
-* Installed [vue-devtools](https://github.com/vuejs/vue-devtools) and [devtron](https://github.com/electron/devtron) tools for development
-* Ability to easily package your application using [electron-packager](https://github.com/electron-userland/electron-packager) or [electron-builder](https://github.com/electron-userland/electron-builder)\*
-* `appveyor.yml` and `.travis.yml` configurations for automated deployments with [electron-builder](https://github.com/electron-userland/electron-builder)\*
-* Ability to produce web output for browsers
-* Handy [NPM scripts](/npm_scripts.md)
+* Базовая структура проекта с **единственным** `package.json` сетапом
+* Детальная [документация](https://simulatedgreg.gitbooks.io/electron-vue/content/)
+* Скафолдинг проекта с использованием [vue-cli](https://github.com/vuejs/vue-cli)
+* Готовые плагины Vue \([axios](https://github.com/mzabriskie/axios), [vue-electron](https://github.com/SimulatedGREG/vue-electron), [vue-router](https://github.com/vuejs/vue-router), [vuex](https://github.com/vuejs/vuex)\)\*
+* Установленные [vue-devtools](https://github.com/vuejs/vue-devtools) и [devtron](https://github.com/electron/devtron) инструменты для разработки
+* Возможность легко упаковать ваше приложение, используя [electron-packager](https://github.com/electron-userland/electron-packager) или [electron-builder](https://github.com/electron-userland/electron-builder)\*
+* `appveyor.yml` и `.travis.yml` конфигурации для автоматического развертывания с [electron-builder](https://github.com/electron-userland/electron-builder)\*
+* Возможность производить веб-вывод для браузеров
+* Удобный [NPM scripts](/npm_scripts.md)
 * Use of [webpack](https://github.com/webpack/webpack) and [vue-loader](https://github.com/vuejs/vue-loader) with Hot Module Replacement
 * Process restarting when working in electron's `main` process
-* HTML/CSS/JS pre-processor support with [vue-loader](https://github.com/vuejs/vue-loader/)
+* HTML/CSS/JS поддержка препроцессора с [vue-loader](https://github.com/vuejs/vue-loader/)
