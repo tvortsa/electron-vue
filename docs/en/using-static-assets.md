@@ -1,10 +1,10 @@
-# Using Static Assets
+# Использование статических активов
 
-If you have used the official `vuejs-templates/webpack` boilerplate before, then you should be familiar with the `static/` directory. It is here where you can place static assets that both the `main` and `renderer` process can consume. Using these assets within your Vue application is simple, but usage with `fs` and other modules that need a full path can be a little tricky. Thankfully, electron-vue provides a `__static` variable that yields the path to the `static/` directory in both development and production.
+Если вы использовали официальный `vuejs-templates/webpack` boilerplate ранее, тогда вы должны быть знакомы с каталогом `static /`. Именно здесь вы можете разместить статические ресурсы, которые могут использовать как процессы `main`, так и` renderer`. Использовать эти ресурсы в вашем приложении Vue просто, но использование с `fs` и другими модулями, которым нужен полный путь, может быть немного сложнее. К счастью, electron-vue предоставляет переменную `__static`, которая дает путь к каталогу` static / `как в разработке, так и в производстве.
 
-### Use Case within `src` tags in Vue Components
+### Вариант использования в тегах `src` в Vue Components
 
-Let's say I have a component that loads an image, but the image's path isn't known until some other task is completed. To keep things simple, let's just use a `data` variable to bind our `<img>`'s src.
+Допустим, у меня есть компонент, который загружает изображение, но путь к изображению неизвестен, пока не выполнится какая-то другая задача. Для простоты давайте используем переменную `data`, чтобы связать src нашего <img>`.
 
 **SomeComponent.vue**
 
@@ -23,11 +23,10 @@ Let's say I have a component that loads an image, but the image's path isn't kno
 </script>
 ```
 
-Here `webpack` will not bundle the `unsplash.png` image and the application will look inside the `static/imgs/unsplash.png` directory for the asset. Thanks to `vue-loader`, all of the dirty work is done for us.
+Здесь `webpack` не будет связывать изображение` unsplash.png`, и приложение будет искать в каталоге `static / imgs / unsplash.png` ресурс. Благодаря `vue-loader`, вся грязная работа сделана за нас.
+### Вариант использования в JS с `fs`,` path` и `__static`
 
-### Use Case within JS with `fs`,`path` and `__static`
-
-Let's say we have a static asset that we need to read into our application using `fs`, but how do we get a reliable path, in both development and production, to the `static/` directory? electron-vue provides a global variable named `__static` that will yield a proper path to the `static/` directory. Here's how we can use it to read a simple text file in both development and production.
+Допустим, у нас есть статический ресурс, который нам нужно прочитать в наше приложение, используя `fs`, но как нам получить надежный путь, как в процессе разработки, так и в производстве, к каталогу` static / `? Electron-vue предоставляет глобальную переменную с именем `__static`, которая даст правильный путь к каталогу` static / `. Вот как мы можем использовать его для чтения простого текстового файла как в разработке, так и в производстве.
 
 **static/someFile.txt**
 
@@ -47,7 +46,7 @@ console.log(fileContents)
 // => "foobar"
 ```
 
-Please note that in production all files are packed with [`asar`](https://github.com/electron/asar) by default as it is highly recommended. Because of this, assets within the `static/` folder can only be accessed within `electron` since it is aware of this behavior. So if you are planning to distribute files to your users, that can for example open in a external program, you would first need to copy those assets from your application into the user's document space or desktop. From there you could use the [`shell.openItem()`](https://electron.atom.io/docs/api/shell/#shellopenitemfullpath) electron API to open those assets.
+Обратите внимание, что при производстве все файлы упакованы с [`asar`](https://github.com/electron/asar) по умолчанию, как это настоятельно рекомендуется. Из-за этого к ресурсам в папке «static /» можно получить доступ только внутри «электрона», так как он знает об этом поведении. Поэтому, если вы планируете распространять файлы среди своих пользователей, которые могут, например, открываться во внешней программе, вам сначала необходимо скопировать эти активы из вашего приложения в пространство документов пользователя или на рабочий стол. Оттуда вы можете использовать [`shell.openItem()`](https://electron.atom.io/docs/api/shell/#shellopenitemfullpath) electron API чтобы открыть эти активы.
 
-An alternative method to this situation would be to configure `electron-packager`/`electron-builder` to set specific files to "unpack" from the `asar` archive in production. electron-vue has no plans to support this method; any issues related to this or how to set this up will be closed.
+Альтернативным методом в этой ситуации будет настройка `electron-packager`/`electron-builder` установить определенные файлы для "распаковки" из архива `asar` в работе. electron-vue не планирует поддерживать этот метод; любые вопросы, связанные с этим или как его настроить, будут закрыты.
 
